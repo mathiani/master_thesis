@@ -1,0 +1,42 @@
+
+#Container
+
+gridshape: [40,30]
+fitness_domain: [[0,55],]
+features_domain: [[0,40],[0,30]]
+
+#Algorithm
+
+algorithm: ME   #ME, NSLC or NS, NEAT
+
+
+n_runs: 10
+budget: 1000000
+batch_size: 1000
+threshold_novelty: 12 # Not used for ME. For actions 5-10. For regular features, 0.5-1
+capacity: 100 #Used for NS, NSLC
+k: 15
+ind_domain: [-5,5]
+activation_function: tanh # relu or tanh
+
+
+#Model
+
+layers: [10,20,10,8]
+input_size: 63
+output_size: 4
+
+
+#Simulation
+
+env_name: tomato_watering
+feature1: mean_watered
+feature2: mean_nr_pos
+action_features: False
+
+
+episodes_per_eval: 1
+
+#Output
+
+save_period: 0
